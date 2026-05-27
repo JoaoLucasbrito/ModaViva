@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Se o login der certo, redireciona o usuário para a tela de estoque
                 // Ajuste o caminho se a sua página de estoque estiver em outra pasta
-                window.location.href = "Frontend/estoque.html"; 
+                window.location.href = "Frontend/Estoque.html"; 
 
             } catch (err) {
                 console.error("Erro na autenticação:", err.message);
