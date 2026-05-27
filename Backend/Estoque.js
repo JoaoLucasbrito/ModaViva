@@ -114,40 +114,44 @@ async function excluirProduto(id) {
 }
 
 // 🔥 FUNÇÃO EDITAR
+
+// 🔥 Variável global para rastrear se estamos editando e qual ID está sendo editado
+let produtoSendoEditadoId = null;
+
+// 🔥 NOVA FUNÇÃO EDITAR COM MODAL
 async function editarProduto(id) {
-    const Produto = prompt("Novo nome do produto:");
-    const fornecedor = prompt("Fornecedor:");
-    const Tamanho = prompt("Tamanho:");
-    const categoria = prompt("Categoria:");
-    const valor_unitario = prompt("Valor unitário:");
-    const quantidade_total = prompt("Quantidade:");
-
-    if (!Produto) return;
-
     try {
-        const { error } = await _supabase
+        // 1. Busca os dados atuais do produto específico no Supabase
+        const { data, error } = await _supabase
             .from('Estoque')
-            .update({
-                Produto,
-                fornecedor,
-                Tamanho,
-                categoria,
-                valor_unitario: Number(valor_unitario),
-                quantidade_total: Number(quantidade_total)
-            })
-            .eq('Estoque_id', id);
+            .select('*')
+            .eq('Estoque_id', id)
+            .single(); // Traz apenas um registro
 
         if (error) throw error;
 
-        mostrarAviso("Produto atualizado com sucesso!");
-        await carregarDados(); // 🔥 força atualizar tabela
+        // 2. Preenche os inputs do modal com os dados retornados
+        document.getElementById("produto").value = data.Produto || "";
+        document.getElementById("fornecedor").value = data.fornecedor || "";
+        document.getElementById("tamanho").value = data.Tamanho || "";
+        document.getElementById("categoria").value = data.categoria || "";
+        document.getElementById("valor").value = data.valor_unitario || "";
+        document.getElementById("quantidade").value = data.quantidade_total || "";
+
+        // 3. Altera o título do modal para o usuário saber que está editando
+        document.querySelector("#modal h2").innerText = "Editar Produto";
+
+        // 4. Salva o ID do produto na variável de controle
+        produtoSendoEditadoId = id;
+
+        // 5. Abre o modal
+        document.getElementById("modal").style.display = "flex";
 
     } catch (err) {
-        console.error("Erro ao editar:", err.message);
-        mostrarAviso("Erro ao editar produto.", '#ef4444');
+        console.error("Erro ao buscar dados para edição:", err.message);
+        mostrarAviso("Erro ao carregar dados do produto.", '#ef4444');
     }
 }
-
 // 🔥 DOM CARREGADO
 document.addEventListener("DOMContentLoaded", () => {
 
