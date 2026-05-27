@@ -1,7 +1,7 @@
 body{
 
     /* 1. O caminho da sua imagem */
-    background-image: url('/Frontend/assets/imagem\ de\ fundo02.svg');
+    background-image: url('../assets/imagem\ de\ fundo02.svg');
 
     /* 2. Faz a imagem cobrir toda a área sem distorcer (essencial) */
     background-size: cover;
@@ -17,11 +17,6 @@ body{
 
     /* 6. Garante que o body ocupe no mínimo a altura total da tela */
     min-height: 100vh;
-
-
-
-
-
 }
 form{
     background-color: #ffffff;

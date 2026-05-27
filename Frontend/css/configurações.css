@@ -2,7 +2,7 @@ body{
     display: flex;
     
      /* 1. O caminho da sua imagem */
-    background-image: url('/Frontend/assets/6.svg');
+    background-image: url('../assets/6.svg');
 
     /* 2. Faz a imagem cobrir toda a área sem distorcer (essencial) */
     background-size: cover;
@@ -18,7 +18,6 @@ body{
 
     /* 6. Garante que o body ocupe no mínimo a altura total da tela */
     min-height: 100vh;
-
 }
 #LOgo{
     width: 50px;
@@ -31,9 +30,6 @@ body{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-
-
 #user{
     display: flex;
     align-items: center;
@@ -50,7 +46,6 @@ body{
     position: relative;
     transition: all .5s;
     min-width: 82px;
-  
 }
 #sidebar_content{
     padding: 12px;
@@ -167,7 +162,6 @@ main {
 
 /* Barra de Navegação Superior */
 .top-bar {
-   
     padding: 20px 30px;
     display: flex;
     align-items: center;
@@ -196,12 +190,10 @@ main {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
-
 .table thead {
     background-color: gray;
     border-bottom: 2px solid #edf2f7;
 }
-
 .table th {
     text-align: left;
     padding: 15px;
@@ -210,7 +202,6 @@ main {
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
-
 .table td {
     padding: 15px;
     border-bottom: 1px solid #edf2f7;
@@ -221,7 +212,6 @@ main {
 .table tr:hover {
     background-color: #f9fafb; /* Efeito de destaque ao passar o mouse */
 }
-
 /* Estilo das Badges de Status */
 .badge {
     padding: 6px 12px;
@@ -230,17 +220,14 @@ main {
     font-weight: 600;
     text-transform: uppercase;
 }
-
 .bg-success {
     background-color: #c6f6d5;
     color: #22543d;
 }
-
 .bg-danger {
     background-color: #fed7d7;
     color: #822727;
 }
-
 i{
 color: #302f2f;
 }
