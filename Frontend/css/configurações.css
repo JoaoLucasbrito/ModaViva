@@ -62,11 +62,15 @@ body{
     cursor: pointer;
 }
 .side-items.active{
-    background-color:  #737274;
+    background-color:  #535253;
 }
 .side-items:hover:not(.active), #logout_btn:hover{
     background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0) ;
     
+}
+.side-items:hover:not(.active) * , #logout_btn:hover *{
+    color: black;
 }
 .side-items a{
     display: flex;
@@ -75,9 +79,7 @@ body{
     text-decoration: none;
     color: black;
 }
-.side-items.active a{
-    color: rgb(0, 0, 0);
-}
+
 .side-items a i{
     display: flex;
     align-items: center;
@@ -104,18 +106,18 @@ body{
     gap: 20px;
     padding: 15px;
     border-radius: 8px;
-    background-color: rgb(240, 240, 240);
+    background-color: #535253;
     border: none;
     cursor: pointer;
     text-align: start;
     width: 100%;
-    color: black;
+   
 }
 #opem_btn{
     position: absolute;
     top: 45px;
     right: -10px;
-    background-color: gray;
+    background-color: #535253;
     color: white;
     border-radius: 100%;
     width: 30px;
@@ -136,9 +138,10 @@ body{
     text-overflow: ellipsis;
     font-size: 12px;
     transition:width .6s;
-    color: black;
+    color: rgb(255, 255, 255);
     
 }
+
 #sidebar.open-sidebar{
     min-width: 15%;
 }
@@ -229,7 +232,7 @@ main {
     color: #822727;
 }
 i{
-color: #302f2f;
+color: #9e9c9c;
 }
 .fa-solid fa-right-from-bracket{
     color: black;

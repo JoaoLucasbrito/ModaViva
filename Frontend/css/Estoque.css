@@ -66,12 +66,16 @@ body{
     cursor: pointer;
 }
 .side-items.active{
-    background-color: #737274;
+    background-color: #535253;
 }
 .side-items:hover:not(.active), #logout_btn:hover{
     background-color: rgb(240, 240, 240);
     
 }
+.side-items:hover:not(.active) * , #logout_btn:hover *{
+    color: black;
+}
+
 .side-items a{
     display: flex;
     align-items: center;
@@ -79,9 +83,7 @@ body{
     text-decoration: none;
     color: black;
 }
-.side-items.active a{
-    color: rgb(0, 0, 0);
-}
+
 .side-items a i{
     display: flex;
     align-items: center;
@@ -98,8 +100,7 @@ body{
     color: rgb(0, 0, 0);
 }
 #logout{
-    color:black;
-    
+    color:rgb(0, 0, 0);
     padding: 12px;
 }
 #logout_btn{
@@ -109,7 +110,7 @@ body{
     gap: 20px;
     padding: 15px;
     border-radius: 8px;
-    background-color:grey;
+    background-color:#535253;
     border: none;
     cursor: pointer;
     text-align: start;
@@ -120,7 +121,7 @@ body{
     position: absolute;
     top: 45px;
     right: -10px;
-    background-color: gray;
+    background-color:#535253;
     color: white;
     border-radius: 100%;
     width: 30px;
@@ -141,7 +142,7 @@ body{
     text-overflow: ellipsis;
     font-size: 12px;
     transition:width .6s;
-    color: black;
+    color: rgb(255, 252, 252);
     
 }
 #sidebar.open-sidebar{
@@ -243,7 +244,7 @@ main {
     color: #822727;
 }
 i{
-color: #302f2f;
+color: #9e9c9c;
 }
 .fa-solid fa-right-from-bracket{
     color: black;
@@ -256,7 +257,6 @@ color: #302f2f;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
-
   justify-content: center;
   align-items: center;
 }
@@ -266,7 +266,6 @@ color: #302f2f;
   padding: 20px;
   border-radius: 10px;
   width: 300px;
-
   display: flex;
   flex-direction: column;
   gap: 10px;
